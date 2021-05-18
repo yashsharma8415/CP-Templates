@@ -1,5 +1,5 @@
 // Code for finding articulation points/cut vertices in a graph.
-// Time Complexity - O(n + m) where n is the number of vertices and n is the number of edges in the graph.
+// Time Complexity - O(n + m) where n is the number of vertices and m is the number of edges in the graph.
 
 vi adj[LIM];
 bool visited[LIM];
