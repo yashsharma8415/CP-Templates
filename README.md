@@ -1,2 +1,2 @@
-# CPP-CP-Template
-C++ Template Code for Competitive Programming.
+# CP Templates
+C++ Template Codes for Competitive Programming.
