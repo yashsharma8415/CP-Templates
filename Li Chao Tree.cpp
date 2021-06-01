@@ -49,7 +49,7 @@ int query(int pos, int l = 1, int r = LIM-1, int index = 1)
  
 void solve()
 {
-    // fill liChaoTree[] with some initail value
+    // fill liChaoTree[] with some initial value
  
     for(int i=0; i<n; i++)
     {
