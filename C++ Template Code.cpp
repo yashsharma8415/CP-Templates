@@ -27,15 +27,14 @@ typedef long double ld;
 #define fio ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0)
 #define minheap priority_queue<int,vector<int>,greater<int>>
 #define print2d(dp,n,m) for(int i=0;i<n;i++){for(int j=0;j<m;j++)cout<<dp[i][j]<<" ";cout<<"\n";}
-#define debug(a) cerr << #a << ": " << a << endl
 #define ftt int t;cin>>t;for(int tt=1;tt<=t;++tt)
-#define forr(i,n) for(int(i)=1;(i)<=(n);(i)++)
 #define Sum(v) accumulate(v.begin(),v.end(),(ll)0)
 #define Rev(v) reverse(v.begin(),v.end());
 #define Sort(v) sort(v.begin(),v.end());
-#define Input(v) for(auto &x:v)cin>>x;
-#define mem(a,b) memset(a,b,sizeof(a))
-#define deb(x) cout<<"\nhi"<<x<<"\n"
+#define Input(v) for(auto &x:v) cin>>x;
+#define Output(v) for(auto x:v) cout<<x<<" ";
+#define mem(a, b) memset(a, b, sizeof(a))
+#define dbgx(x) cout<<"\nhi "<<x<<"\n"
 #define double long double
 #define int long long
 #define maxheap priority_queue<int>
@@ -44,14 +43,11 @@ typedef long double ld;
 #define sayn cout<<"NO\n"
 #define pii pair<int,int>
 #define mii map<int,int>
-#define mci map<char, int>
-#define msi map<string, int>
 #define umii unordered_map<int,int>
 #define vii vector<pair<int,int>>
 #define vvi vector<vector<int>>
 #define vb vector<bool>
 #define vi vector<int>
-#define eb emplace_back
 #define pb push_back
 #define pf push_front
 #define popb pop_back
@@ -60,26 +56,29 @@ typedef long double ld;
 #define fst first
 #define endl "\n"
 
-const int INF   = numeric_limits<int>::max();
+const int INF   = numeric_limits<int>::max() / 2;
 const double PI = 3.1415926535898;
-const int MOD   = 1000000007;
-const int LIM   = 100005;
+const int MOD   = 1e9 + 7;
+const int LIM   = 2e6 + 5;
 
 // O(log y)
-int fpow( int x,int y) {
+int fpow(int x, int y) {
     int temp;
-    if(y == 0)
+    if (y == 0)
         return 1;
-    temp = fpow(x, y/2);
-    if (y%2 == 0)
-        return temp*temp;
+    temp = fpow(x, y / 2);
+    if (y % 2 == 0)
+        return (temp * temp) % MOD;
     else
-        return x*temp*temp;}
+        return (x * ((temp * temp) % MOD)) % MOD;
+}
 
 // O(log max(a, b))
-int gcd(int a,int b) {
-    if(b==0)return a;
-    return gcd(b,a%b);}
+int gcd(int a, int b) {
+    if (b == 0)
+        return a;
+    return gcd(b, a % b);
+}
 
 // O(n)
 /*bool prime[5*LIM];
@@ -92,7 +91,7 @@ void sieve(int n) {
     prime[1]=0;}*/
 
 // O(sqrt(n))
-bool isPrime(int n){
+bool isPrime(int n) {
     if (n <= 1)
         return false;
     if (n <= 3)
@@ -102,57 +101,64 @@ bool isPrime(int n){
     for (int i = 5; i * i <= n; i = i + 6)
         if (n % i == 0 || n % (i + 2) == 0)
             return false;
-    return true;}
-
-int modInverse(int n, int p){
-    return fpow(n, p-2);
+    return true;
 }
 
-/*int nCr(int n, int r, int p){
+int modInverse(int n, int p) {
+    return fpow(n, p - 2) % p;
+}
+
+/*int nCr(int n, int r, int p) {
     if(r == 0)
         return 1;
-    return (fac[n] * modInverse(fac[r], p) % p * modInverse(fac[n - r], p) % p) % p;
+    return (fact[n] * modInverse(fact[r], p) % p * modInverse(fact[n - r], p) % p) % p;
 }*/
 
 // O(logn * sqrt(n))
-map<int,int> primeFactors(int n)
-{
+map<int, int> primeFactors(int n) {
     map<int, int> mp;
-    while (n % 2 == 0)
-    {
-        if(mp.count(2) == 1)
+    while (n % 2 == 0) {
+        if (mp.count(2) == 1)
             mp[2]++;
         else
-            mp.insert({2,1});
-        n = n/2;
+            mp.insert({2, 1});
+        n = n / 2;
     }
-    for (int i = 3; i <= sqrt(n); i = i + 2)
-    {
-        while (n % i == 0)
-        {
-            if(mp.count(i) == 1)
+    for (int i = 3; i <= sqrt(n); i = i + 2) {
+        while (n % i == 0) {
+            if (mp.count(i) == 1)
                 mp[i]++;
             else
-                mp.insert({i,1});
-            n = n/i;
+                mp.insert({i, 1});
+            n = n / i;
         }
     }
-    if (n > 2)
-    {
-        if(mp.count(n) == 1)
+    if (n > 2) {
+        if (mp.count(n) == 1)
             mp[n]++;
         else
-            mp.insert({n,1});
+            mp.insert({n, 1});
     }
     return mp;
 }
+
+void solve()
+{
+
+    return;
+}
+
 
 //*************************************************************************************************************************
 
 
 int32_t main()
-{    fio;
+{   fio;
 
+    ftt
+    {
+        solve();
+    }
 
     return 0;
 }
