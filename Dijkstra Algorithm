@@ -1,5 +1,6 @@
 // Code for finding single source shortest path using dijkstra algorithm.
 // Time Complexity - O(n.logn + m.logn) where n is the number of vertices and m is the number of edges in the graph.
+// Used for directed/undirected graphs with non-negative edge weights.
 
 int dist[LIM], parent[LIM];
 vii adj[LIM];
