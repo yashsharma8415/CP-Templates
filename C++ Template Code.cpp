@@ -1,12 +1,3 @@
-/*
-
-    Author      : YASH SHARMA
-    Institution : IIT PATNA
-    Country     : INDIA
-
-*/
-
-
 #include <bits/stdc++.h>
 //#include <ext/pb_ds/assoc_container.hpp>
 //#include <ext/pb_ds/tree_policy.hpp>
@@ -78,68 +69,6 @@ int gcd(int a, int b) {
     if (b == 0)
         return a;
     return gcd(b, a % b);
-}
-
-// O(n)
-/*bool prime[5*LIM];
-void sieve(int n) {
-    memset(prime, true, sizeof(prime));
-    for (int p=2; p*p<=n; p++)
-        if (prime[p] == true)
-            for (int i=p*p; i<=n; i += p)
-                prime[i] = false;
-    prime[1]=0;}*/
-
-// O(sqrt(n))
-bool isPrime(int n) {
-    if (n <= 1)
-        return false;
-    if (n <= 3)
-        return true;
-    if (n % 2 == 0 || n % 3 == 0)
-        return false;
-    for (int i = 5; i * i <= n; i = i + 6)
-        if (n % i == 0 || n % (i + 2) == 0)
-            return false;
-    return true;
-}
-
-int modInverse(int n, int p) {
-    return fpow(n, p - 2) % p;
-}
-
-/*int nCr(int n, int r, int p) {
-    if(r == 0)
-        return 1;
-    return (fact[n] * modInverse(fact[r], p) % p * modInverse(fact[n - r], p) % p) % p;
-}*/
-
-// O(logn * sqrt(n))
-map<int, int> primeFactors(int n) {
-    map<int, int> mp;
-    while (n % 2 == 0) {
-        if (mp.count(2) == 1)
-            mp[2]++;
-        else
-            mp.insert({2, 1});
-        n = n / 2;
-    }
-    for (int i = 3; i <= sqrt(n); i = i + 2) {
-        while (n % i == 0) {
-            if (mp.count(i) == 1)
-                mp[i]++;
-            else
-                mp.insert({i, 1});
-            n = n / i;
-        }
-    }
-    if (n > 2) {
-        if (mp.count(n) == 1)
-            mp[n]++;
-        else
-            mp.insert({n, 1});
-    }
-    return mp;
 }
 
 void solve()
