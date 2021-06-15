@@ -15,7 +15,7 @@ typedef long long ll;
 typedef long double ld;
 //typedef tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update> ordered_set;
 
-#define fio ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0)
+#define Confundo ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0)
 #define minheap priority_queue<int,vector<int>,greater<int>>
 #define print2d(dp,n,m) for(int i=0;i<n;i++){for(int j=0;j<m;j++)cout<<dp[i][j]<<" ";cout<<"\n";}
 #define ftt int t;cin>>t;for(int tt=1;tt<=t;++tt)
@@ -47,10 +47,10 @@ typedef long double ld;
 #define fst first
 #define endl "\n"
 
-const int INF   = numeric_limits<int>::max() / 2;
-const double PI = 3.1415926535898;
-const int MOD   = 1e9 + 7;
-const int LIM   = 2e6 + 5;
+const int INF    = numeric_limits<int>::max() / 2;
+const double PI  = 3.1415926535898;
+const int MOD    = 1e9 + 7;
+const int LIM    = 2e6 + 5;
 
 // O(log y)
 int fpow(int x, int y) {
@@ -82,7 +82,8 @@ void solve()
 
 
 int32_t main()
-{   fio;
+{
+    Confundo;
 
     ftt
     {
