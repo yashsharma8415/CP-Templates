@@ -60,7 +60,7 @@ void solve()
         edges.pb({u, v, w});
     }
 
-    Sort(edges);
+    sort(edges.begin(), edges.end());
 
     for (auto e : edges)
     {
