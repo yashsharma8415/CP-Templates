@@ -4,21 +4,21 @@
 int l, timer;
 int tin[LIM], tout[LIM], up[LIM][22];
 
-void dfs(int v, int p)
+void dfs(int u, int p)
 {
-    tin[v] = ++timer;
-    up[v][0] = p;
+    tin[u] = ++timer;
+    up[u][0] = p;
 
     for (int i = 1; i <= l; ++i)
-        up[v][i] = up[up[v][i - 1]][i - 1];
+        up[u][i] = up[up[u][i - 1]][i - 1];
 
-    for (int u : adj[v])
+    for (int x : adj[u])
     {
-        if (u != p)
-            dfs(u, v);
+        if (x != p)
+            dfs(x, u);
     }
 
-    tout[v] = ++timer;
+    tout[u] = ++timer;
 }
 
 bool isAncestor(int u, int v)
