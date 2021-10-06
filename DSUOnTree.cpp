@@ -1,3 +1,6 @@
+// Code for Sack or DSU on tree algorithm.
+// Time Complexity - O(n.logn) where n is the number of vertices in the tree.
+
 vector<int>* vec[LIM];
 
 void DSUOnTree(int u, int p, bool keep)
