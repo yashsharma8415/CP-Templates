@@ -1,7 +1,7 @@
 // Code for heavy-light decomposition of a tree.
 // Time Complexity - O(n * logn) for build and O((logn) ^ 2) for each query where n is the number of nodes in tree.
 
-int sz[LIM], parent[LIM], depth[LIM], pos[LIM], chainHead[LIM];
+int cnt, sz[LIM], parent[LIM], depth[LIM], pos[LIM], chainHead[LIM];
 
 int dfsForSize(int u, int p)
 {
