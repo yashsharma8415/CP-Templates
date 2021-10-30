@@ -1,5 +1,6 @@
 // Code for sparse segment tree data structure.
 // Time Complexity - O(log n) for query and update where n is the length of segment.
+// LIM = 4 * q * log(n) where q is the number of queries and n is the length of segment.
 
 struct node
 {
