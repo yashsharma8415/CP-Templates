@@ -53,7 +53,7 @@ void convexHullTrick()
         while (dq.size() >= 2 && cur.intersectionX(dq[0]) <= dq[0].intersectionX(dq[1]))
             dq.pop_front();
 
-        dq.pop_front(cur);
+        dq.push_front(cur);
     }
 
     return;
