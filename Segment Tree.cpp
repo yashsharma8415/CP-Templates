@@ -59,9 +59,6 @@ void update(int index, int l, int r, int pos, int newVal)
 
 void initSegmentTree(int n)
 {
-    for (int i = 0; i < n + 5; ++i)
-        a[i] = 0;
-
     idElement = 0;
 
     build(1, 0, n - 1);
