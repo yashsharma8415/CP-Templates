@@ -6,7 +6,7 @@ int st[4 * LIM], a[LIM];
 
 int combine(int a, int b)
 {
-    return a + b;
+    return operation(a, b);
 }
 
 void build(int index, int l, int r)
