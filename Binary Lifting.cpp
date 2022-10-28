@@ -20,7 +20,6 @@ void dfs(int u, int p)
 void init(int root)
 {
     l = ceil(log2(n));
-
     dfs(root, root);
 }
 
