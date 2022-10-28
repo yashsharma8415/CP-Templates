@@ -1,3 +1,6 @@
+// Code for centroid decomposition of a tree.
+// Time Complexity - O(n * logn) where n is the number of nodes in tree.
+
 set<int> adj[LIM];
 int sz[LIM];
 
